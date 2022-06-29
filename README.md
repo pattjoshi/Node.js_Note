@@ -42,6 +42,30 @@
 Press Ctrl+C to abort current expression, Ctrl+D to exit the 
 REPL
 ```
+*********
+# Create file in Terminal
+```
+type nul >home.js
+```
+# What we can do in REPL
+
+- JS Expression
+- use veriables
+- Multiline code / loops
+- use (_) to get the last result
+- we cand use editor mode
+
+## Argument:- 
+- function call kari kari value pass kale argument kahe san
+## paramente:-
+- function defind kala bele gin value expact kar su seta k paramentr kahe san
+
+
+
+
+
+
+
 
 
 
