@@ -4,6 +4,13 @@
 ****
 [Download node.js](https://nodejs.org/en/)
 
+## JavaScript is synchronous, single-threaded language.
+- synchronous:- one command at a time.
+- single-threaded :- in a specific synchronous ouder
+
+## callback function:- 
+- a function that is passed to another function as an argument.
+
 # What is Node js?
 - Node.js is a javaScript runtime built on chrome's V8 javaScript engine.
 - Node.js is a javaScript running on the server. 
@@ -133,7 +140,7 @@ const data = fs.readFileSync("bio.txt", "utf8");
 console.log(data);
 ```
 ## O/p
-- My Name is Om ParakashI am a software engineer
+- My Name is Om Parakash I am a software engineer
 ********
 - v.
 ```
@@ -150,3 +157,48 @@ fs.rmdirSync("NodeLearn"); // delete directory
 - code unit is 8-bits.
 - use one to four code units to encode Unicode.
 
+# Node.JS Asynchronous File System Core Modules | Reading and Writing File Asynchronously
+
+```
+const fs = require("fs");
+
+fs.writeFile("test.txt", "Today is a Awesome day", (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("File created");
+  }
+});
+
+// callback function:- a function that is passed to another function as an argument
+```
+- We pass them a function as an argument - a callback - that gets called when that gets called when that task complets.
+- The callback has an argument that fells yu whether the operation completed sucessfully.
+- Now we need to say what to do when fs.writeFile has completed (even if it's nothing ), and start checking for errors.
+
+## Asyne appendFile
+```
+fs.appendFile("test.txt", " Have a Nice day", (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("File created");
+  }
+});
+```
+## async readFile
+```
+fs.readFile("test.txt", "utf8", (err, data) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(data);
+  }
+});
+```
+O/p:-
+- Today is a Awesome day Have a Nice day
+
+
+
+🙏 If you find this repo helpful then don't forget to give a star ❇️ to this repository. :)
