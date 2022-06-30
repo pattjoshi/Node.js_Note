@@ -60,6 +60,12 @@ type nul >home.js
 ## paramente:-
 - function defind kala bele gin value expact kar su seta k paramentr kahe san
 
+********
+
+# Node.js core module 
+- consider modules to be the same as javaScript libraies.A set of functions you want to include in your application
+
+- Node.js has a set of buit-in modules which you can use without any further installation.
 
 
 
