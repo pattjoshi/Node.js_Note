@@ -198,7 +198,87 @@ fs.readFile("test.txt", "utf8", (err, data) => {
 ```
 O/p:-
 - Today is a Awesome day Have a Nice day
+***********
+
+# Challange Time (using async Module)
+
+- 1. Create a folder named it NodeCh
+- 2. Create a file in it named bio.txt and data into it.
+- 3. Add more data into the file at the end of the existing data.
+- 4. Read the data without getting the buffer data at first. (file encoding)
+- 5. Rename the file name to mybio.txt
+- 6. now delete both the file and the folder.
+*******
+# Challenge Ans:-
+- i.
+```
+fs.mkdir("NodeCh", function (err) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("folder created");
+  }
+});
+```
+- ii.
+```
+const fs = require("fs");
+
+fs.writeFile("bio.txt", "Have a nice day", (err) => {
+  if (err) throw err;
+  console.log("File created");
+});
+
+```
+- iii.
+```
+const fs = require("fs");
+
+fs.appendFile(
+  "bio.txt",
+  "🙏 If you find this repo helpful then do not forget to give a star ❇️ to this repository.",
+  (err) => {
+    if (err) throw err;
+    console.log("File created and data written to file");
+  }
+);
+```
+- iv.
+```
+const fs = require("fs");
+
+fs.readFile("bio.txt", "utf-8", (err, data) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(data);
+  }
+});
+```
+O/p:-
+- Have a nice day� If you find this repo helpful then do not f 
+orget to give a star ❇️ to this repository.
+
+- v.
+```
+const fs = require("fs");
+
+fs.rename("bio.txt", "mybio.txt", (err) => {
+  if (err) throw err;
+  console.log("File Renamed");
+});
+```
+- vi.
+```
+const fs = require("fs");
+
+fs.unlink("mybio.txt", (err) => {
+  if (err) throw err;
+  console.log("File deleted!");
+});
+// delete file mybio.txt
+
+```
 
 
-
-🙏 If you find this repo helpful then don't forget to give a star ❇️ to this repository. :)
+## 🙏 If you find this repo helpful then don't forget to give a star ❇️ to this repository. :)
