@@ -67,10 +67,41 @@ type nul >home.js
 
 - Node.js has a set of buit-in modules which you can use without any further installation.
 
+******
+# create file by Node modele
+```
+const fs = require("fs");
+```
+## if that file does not exist, it will create it and write the data
+```
+fs.writeFileSync("notes.txt", "Hello i am learning node");
+```
+##  add this line to the file with out deleting the existing file data
+```
+fs.appendFileSync("notes.txt", " This is the second line");
+```
+***
+# Buffer (data type):-
+- Node.js uincludes an additional data type called Buffer.
+- (NOt avilable in browser's javaScript).
+- Buffer is mainly used to store binary data,
+- while reading form a file or feceiving packets over the notework.
 
+# read the file
+```
+const buf_data = fs.readFileSync("notes.txt");
 
-
-
+console.log(buf_data.toString());
+```
+## O/P:-
+```
+Hello i am learning node This is the second line This is the 
+second line This is the second line
+```
+# rename the file
+```
+fs.renameSync("notes.txt", "readwrite.txt");
+```
 
 
 
