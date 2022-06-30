@@ -102,7 +102,51 @@ second line This is the second line
 ```
 fs.renameSync("notes.txt", "readwrite.txt");
 ```
+ # Challenge Time (CRUD)
 
+- 1. Create a folder named it NodeCh
+- 2. Create a file in it named bio.txt and data into it.
+- 3. Add more data into the file at the end of the existing data.
+- 4. Read the data without getting the buffer data at first. (file encoding)
+- 5. Rename the file name to mybio.txt
+- 6. now delete both the file and the folder.
 
+# Challenge Ans:-
+- i.
+```
+const fs = require("fs");
+fs.mkdirSync("Nodech");
+```
+- ii.
+```
+fs.writeFileSync("bio.txt", "My Name is Om Parakash");
+```
+- iii.
+```
+fs.appendFileSync("bio.txt", " I am a software engineer");
 
+```
+- iv.
+```
+const data = fs.readFileSync("bio.txt", "utf8");
+
+console.log(data);
+```
+## O/p
+- My Name is Om ParakashI am a software engineer
+********
+- v.
+```
+fs.renameSync("bio.txt", "myBio.txt"); // rename file
+```
+- vi.
+```
+fs.unlinkSync("myBio.txt"); // delete file
+
+fs.rmdirSync("NodeLearn"); // delete directory
+```
+##  UTF-8
+- a charactor encoding capable of encoding all possible characters (Called code piont)in Unicode.
+- code unit is 8-bits.
+- use one to four code units to encode Unicode.
 
