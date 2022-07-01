@@ -430,9 +430,12 @@ npm i validator@13.1.1
 
 - if the email is true the turn green else red.
 
-
-
-
+# [nodemon](https://www.npmjs.com/package/nodemon)
+- nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+```
+npm install -g nodemon 
+or using yarn: yarn global add nodemon
+```
 
 
 ## 🙏 If you find this repo helpful then don't forget to give a star ❇️ to this repository. :)
