@@ -372,6 +372,57 @@ Path.js
 }
 Path
 ```
+*******
+# How to CREATE and EXPORT Our Own Modules in Node JS
+
+```
+index.js
+
+const add = require("./operator");
+console.log(add(5, 5));
+```
+*****
+```
+operator.js
+
+const add = (a, b) => a + b;
+module.exports = add;
+```
+*******
+## export multiple modules
+```
+// index.js
+
+const { add, sub, mul } = require("./operator");
+console.log(add(5, 10));
+console.log(sub(50, 10));
+console.log(mul(50, 10));
+```
+*******
+```
+// operator.js
+
+const add = (a, b) => a + b;
+const sub = (a, b) => a - b;
+const mul = (a, b) => a * b;
+module.exports = { add, sub, mul };
+// export multiple modules
+```
+- o/p:-
+```
+15
+40
+500
+```
+*********
+
+
+
+
+
+
+
+
 
 
 ## 🙏 If you find this repo helpful then don't forget to give a star ❇️ to this repository. :)
