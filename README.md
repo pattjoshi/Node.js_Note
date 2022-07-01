@@ -324,9 +324,54 @@ win32
 C:\Users\91907\AppData\Local\Temp
 ```
 
+# 📁 [PATH](https://nodejs.org/api/path.html#path) Module In Node.JS 
+
+-The node:path module provides utilities for working with file and directory paths. It can be accessed using:
+```
+const path = require('path');
+```
+- path module is use for geting the path of the file or directory in the system for creating the path of the file or directory in the system and also for getting the path of the file or directory.
 
 
+## get the directory name of the file or directory
+```
+console.log(path.dirname("/Users/jagrut/Desktop/NodeJS/PahModule/Path.js"));
+```
+## get the extension name of the file or directory
+```
+console.log(path.extname("/Users/jagrut/Desktop/NodeJS/PahModule/Path.js"));
+```
+## get the basename of the file or directory
+```
+console.log(path.basename("/Users/jagrut/Desktop/NodeJS/PahModule/Path.js"));
+```
+## get the parsed object of the file or directory
+```
+console.log(path.parse("/Users/jagrut/Desktop/NodeJS/PahModule/Path.js"));
 
+// parse method is use for getting the parsed object of the file or directory
+```
+## only name of the file or directory
+```
+console.log(path.parse("/Users/jagrut/Desktop/NodeJS/PahModule/Path.js").name);
+
+```
+
+************
+## O/p:-
+```
+/Users/jagrut/Desktop/NodeJS/PahModule
+.js
+Path.js
+{
+  root: '/',
+  dir: '/Users/jagrut/Desktop/NodeJS/PahModule',
+  base: 'Path.js',
+  ext: '.js',
+  name: 'Path'
+}
+Path
+```
 
 
 ## 🙏 If you find this repo helpful then don't forget to give a star ❇️ to this repository. :)
