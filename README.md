@@ -416,9 +416,19 @@ module.exports = { add, sub, mul };
 ```
 *********
 
+##  Import NPM Module in Node.JS
+- npm is a package manager for the javaScript programming language it is the difault package manager for the javaScript runtime enverment Node.js.
 
+## [chalk](https://www.npmjs.com/package/chalk)
 
+```
+npm i chalk@4.1.2
+npm i validator@13.1.1
+```
+## My ist node.js project use npm 
+<img width="821" alt="image" src="https://user-images.githubusercontent.com/78966839/176873330-e8351f0c-ce1d-4421-b90e-2c2584284dcb.png">
 
+- if the email is true the turn green else red.
 
 
 
