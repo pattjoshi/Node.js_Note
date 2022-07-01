@@ -1,5 +1,3 @@
-
-## Today i revi namastay javaScript
 # Node.js_Note
 
 [Bare minimum to learn node js](https://www.simplilearn.com/nodejs-for-beginners-article)
@@ -281,6 +279,54 @@ fs.unlink("mybio.txt", (err) => {
 // delete file mybio.txt
 
 ```
+*********
+# Node.JS [OS](https://nodejs.org/api/os.html) Module To Get Operating System Info
+
+## open  task manager
+```
+ctrl + shift + ecs
+```
+## khow the operating system is running
+```
+const os = require("os");
+console.log(os.platform()); // khow the operating system is running
+```
+## get free memory in the system in gigabytes
+```
+const freeMemory = os.freemem();
+console.log(`Free memory: ${freeMemory / 1024 / 1024 / 1024} GB`);
+```
+##  Get the total amount of RAM in the system in gigabytes
+```
+const totalMemory = os.totalmem();
+console.log(`Total memory: ${totalMemory / 1024 / 1024 / 1024} GB`);
+```
+##  get architecture of the system
+```
+console.log(os.arch());
+```
+## returns the operating system name
+```
+console.log(os.type());
+```
+## returns the path to the temporary directory
+```
+console.log(os.tmpdir());
+```
+
+## O/p:-
+```
+x64
+Windows_NT
+Total memory: 7.826770782470703 GB
+Free memory: 2.9341506958007812 GB
+win32
+C:\Users\91907\AppData\Local\Temp
+```
+
+
+
+
 
 
 ## 🙏 If you find this repo helpful then don't forget to give a star ❇️ to this repository. :)
