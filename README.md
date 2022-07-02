@@ -483,7 +483,7 @@ Module {
 - Node.js provides capabilities to create your own web server which will hendle HTTP requests asynchronously. you can use IIS or Apache to run Node.js web application but it is recommendent to use node.js web server.
 
 ******
-## create own web server
+# create own web server
 ```
 // create own web server
 const http = require("http");
@@ -503,6 +503,33 @@ server.listen(3000, () => {
 - eg.:- request.url, request.method, request.headers, request.body
 - The server is a Node.js object.
 - It can be used to create a web server that can listen on a port and respond to HTTP requests.
+***********
+# Node JS Routing | Handled HTTP Requests in Node.JS
+
+# 404 Error page 
+```
+const http = require("http");
+const server = http.createServer((req, res) => {
+  // console.log(req.url);
+  if (req.url === "/") {
+    res.end("Hello from Heme\n");
+  } else if (req.url === "/about") {
+    res.end("Hello from about\n");
+  } else {
+    res.writeHead(404, { "Content-Type": "text/html" });
+
+    res.end(" <h1> 404 Not Found\n <h1/> ");
+  }
+});
+
+server.listen(3000, () => {
+  console.log("Server is listening on port 3000");
+});
+```
+<img width="805" alt="image" src="https://user-images.githubusercontent.com/78966839/176998982-49dc341e-4cfb-4988-afe4-4ba655e5ccf2.png">
+
+
+******
 
 
 
