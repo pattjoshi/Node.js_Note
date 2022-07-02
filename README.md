@@ -474,6 +474,38 @@ Module {
 ```
 **************
 
+# Creating Our Own Web Server | HTTP Module in Node JS 
+
+# Node.js web server
+- To access web pages of any webapplication, you need to a web server.
+- The web server will handle all the http requests for the web application.
+- e.g IIs is a web server for ASP.NET  web applications and Apache is a web server for PHP of java web applications.
+- Node.js provides capabilities to create your own web server which will hendle HTTP requests asynchronously. you can use IIS or Apache to run Node.js web application but it is recommendent to use node.js web server.
+
+******
+## create own web server
+```
+// create own web server
+const http = require("http");
+const server = http.createServer((req, res) => {
+  res.end("Hello World\n");
+});
+
+server.listen(3000, () => {
+  console.log("Server is listening on port 3000");
+});
+```
+- The http.createServer() method creates a new web server.
+- The http.createServer() method includes request and response parameters which is supplied by the Node.js.
+- The http.createServer() method takes a callback function as an argument.
+- The callback function is called whenever a request is made to the server.
+- The request object object can be used to get information about the current http request.
+- eg.:- request.url, request.method, request.headers, request.body
+- The server is a Node.js object.
+- It can be used to create a web server that can listen on a port and respond to HTTP requests.
+
+
+
 
 
 
