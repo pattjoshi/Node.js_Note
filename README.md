@@ -528,12 +528,138 @@ server.listen(3000, () => {
 ```
 <img width="805" alt="image" src="https://user-images.githubusercontent.com/78966839/176998982-49dc341e-4cfb-4988-afe4-4ba655e5ccf2.png">
 
+**************
+# JSON in Node JS
 
-******
+- JSON :- JavaScript object Notation.
+- JSON is a lightweight
+- format for storing and transporting data.
+- JSON is often used when data is sand form a server to a web page.
 
+# object to json
 
+```
+const bioData = {
+  name: "Om Prakash",
+  age: "19",
+  hobbies: ["reading", "coding"],
+};
 
+// stringify use for convert object to json
+const convJSON = JSON.stringify(bioData);
+console.log(convJSON);
+```
+# json to object
+```
+const bioData = {
+  name: "Om Prakash",
+  age: "19",
+  hobbies: ["reading", "coding"],
+};
 
+// parse use for convert json to object
+const convObject = JSON.parse(convJSON);
+console.log(convObject);
+```
+
+## o/P:-
+```
+{"name":"Om Prakash","age":"19","hobbies":["reading","coding"]}
+
+{ name: 'Om Prakash', age: '19', hobbies: [ 'reading', 'coding' ] }
+
+```
+********
+# Challange JSON 
+
+- Convert to JSON
+- dusre file me add kardena
+- readfile
+- again convert back to json obj to original
+- console.log
+
+# Challange JSON (ANS):-
+- 1
+```
+const bioData = {
+  name: "Om Prakash",
+  age: "19",
+  hobbies: ["reading", "coding"],
+};
+
+// convert to json
+const jsonData = JSON.stringify(bioData);
+console.log(jsonData);
+
+```
+- 2 
+```
+const fs = require("fs");
+
+const bioData = {
+  name: "Om Prakash",
+  age: "19",
+  hobbies: ["reading", "coding"],
+};
+
+// convert to json
+const jsonData = JSON.stringify(bioData);
+console.log(jsonData);
+
+// use fs in json file wirte
+fs.writeFile("json1.json", jsonData, (err) => {
+  // write file
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("File written");
+  }
+});
+
+```
+- 3
+```
+const fs = require("fs");
+
+const bioData = {
+  name: "Om Prakash",
+  age: "19",
+  hobbies: ["reading", "coding"],
+};
+
+// convert to json
+const jsonData = JSON.stringify(bioData);
+console.log(jsonData);
+
+fs.readFile("json1.json", "utf8", (err, data) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(data);
+  }
+});
+
+```
+
+- 4
+```
+const fs = require("fs");
+
+const bioData = {
+  name: "Om Prakash",
+  age: "19",
+  hobbies: ["reading", "coding"],
+};
+
+// convert to json
+const jsonData = JSON.stringify(bioData);
+console.log(jsonData);
+
+// convert to original data
+const data = JSON.parse(jsonData);
+console.log(data);
+
+```
 
 
 ## 🙏 If you find this repo helpful then don't forget to give a star ❇️ to this repository. :)
