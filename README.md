@@ -436,6 +436,45 @@ npm i validator@13.1.1
 npm install -g nodemon 
 or using yarn: yarn global add nodemon
 ```
+# Module Wrapper Function
+
+```
+// module wrapper function
+(function (exports, require, module, __filename, __dirname) {
+  // module code
+  const name = "Om ";
+  console.log(name + "is a good person");
+})();
+```
+## what is module wrapper function?
+- module wrapper function is a function that is used to wrap the code of a module.
+- MODULE FUNCTION is a private function .it is not accessible outside the module.
+- module wrapper function is used to make the code of a module more scalable.
+
+```
+console.log(__filename);
+console.log(__dirname);
+console.log(module);
+```
+## O/p:-
+```
+D:\Node.js_Learn\ModwrapperFun\index.js
+D:\Node.js_Learn\ModwrapperFun
+Module {
+  id: '.',
+  path: 'D:\\Node.js_Learn\\ModwrapperFun',
+  exports: {},
+  filename: 'D:\\Node.js_Learn\\ModwrapperFun\\index.js',    
+  paths: [
+    'D:\\Node.js_Learn\\ModwrapperFun\\node_modules',        
+    'D:\\Node.js_Learn\\node_modules',
+    'D:\\node_modules'
+  ]
+}
+```
+**************
+
+
 
 
 ## 🙏 If you find this repo helpful then don't forget to give a star ❇️ to this repository. :)
