@@ -769,6 +769,28 @@ server.listen(3000, () => {
 
 [FOLDER LINK](https://github.com/pattjoshi/Node.js_Note/tree/master/streams)
 
+# stream.pipe():-
+- the method used to take a credable stream and connect it to a writeable steam.
+- pipe() method - pipes data from one stream to another.
+- pipe() method is used to pipe data from one stream to another.
+
+```
+const fs = require("fs");
+const http = require("http");
+
+const server = http.createServer();
+
+server.on("request", (req, res) => {
+  const rstream = fs.createReadStream("input.txt");
+  rstream.pipe(res);
+});
+
+server.listen(3000, () => {
+  console.log("server is listening on port 3000");
+});
+
+```
+
 
 
 
