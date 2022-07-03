@@ -700,8 +700,26 @@ server.listen(3000, () => {
  ```
  <img width="805" alt="image" src="https://user-images.githubusercontent.com/78966839/177022325-f1ac6511-0315-4b35-8318-ef378c884a93.png">
 
- 
 # [FOLDER LINK](https://github.com/pattjoshi/Node.js_Note/tree/master/UserApi)
+**********
+
+# Events Module in Node.JS | Handling Events in Node.js with EventEmitter
+
+# [Events Module:-](https://www.tutorialsteacher.com/nodejs/nodejs-eventemitter)
+
+- Node.js has a built-in module, called "Events"
+- Where you can create, fire, and listen for-your own events.
+- creating a class for the event mod to inherit from the event emitter class in node js to create an event mod that can be used in the game to create events.
+
+```
+// Events for the Event Mod
+const EventEmitter = require("events");
+
+const event = new EventEmitter();
+// creating a new event emitter class to create a new event mod.
+```
+
+
 
 
 
