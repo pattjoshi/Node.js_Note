@@ -764,9 +764,11 @@ server.listen(3000, () => {
 });
 ```
 <img width="804" alt="image" src="https://user-images.githubusercontent.com/78966839/177043663-a39adfcf-55ef-4b03-a8f4-7f7185ae255f.png">
-**************
+
+********
+
 [FOLDER LINK](https://github.com/pattjoshi/Node.js_Note/tree/master/streams)
-*********************
+
 
 
 
