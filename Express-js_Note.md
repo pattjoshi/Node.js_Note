@@ -52,4 +52,40 @@ app.listen(3000, () => {
 
 <img width="806" alt="image" src="https://user-images.githubusercontent.com/78966839/177335918-6395012b-f7dc-4470-bb26-7539930291cd.png">
 
+#  Express JS Routing & our First Challenge in Express JS
+- / = Welcome to the home page
+- /about = Welcome to the about page
+- /contact = Welcome to the contact page
+
+```
+// create expess appliction
+const express = require("express");
+
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Welcome to the home page");
+});
+
+app.get("/about", (req, res) => {
+  res.send("Welcome to the about page");
+});
+
+app.get("/contact", (req, res) => {
+  res.send("Welcome to the contact page");
+});
+
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
+```
+*************
+
+
+
+
+
+
+
+
 
