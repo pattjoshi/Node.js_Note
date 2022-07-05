@@ -153,6 +153,7 @@ app.listen(3000, () => {
 
 <img width="816" alt="image" src="https://user-images.githubusercontent.com/78966839/177382083-e705ede4-e8aa-4ecc-be08-0d585f6882c2.png">
 
+- shpw static web-site in express.js
 
 
 
