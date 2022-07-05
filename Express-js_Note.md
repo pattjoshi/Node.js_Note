@@ -123,8 +123,35 @@ app.listen(3000, () => {
 ```
 - The methods are identical when an object or array is passed, but res.json() will also convert non-objects, such as null,undefine  which are not valid JSON.
 
+## Serve HTML CSS & JS Files in Express JS | Middleware in Express JS 
 
+```
+const path = require("path");
+// create expess appliction
+const express = require("express");
+const app = express();
 
+const staticpath = path.join(__dirname, "../public");
+// console.log(staticpath);
+
+// buildin middleware
+app.use(express.static(staticpath));
+
+// create a route
+app.get("/", (req, res) => {
+  res.send("Hello World from Express.js");
+});
+app.get("/about", (req, res) => {
+  res.send("Hello About page");
+});
+
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
+```
+# [HTML FILE IN EXPRESS.JS FOLDER LINK](https://github.com/pattjoshi/Node.js_Note/tree/master/STACTIC%20FILE%20IN%20EXPRESS.JS)
+
+<img width="816" alt="image" src="https://user-images.githubusercontent.com/78966839/177382083-e705ede4-e8aa-4ecc-be08-0d585f6882c2.png">
 
 
 
