@@ -227,4 +227,30 @@ nodemon src/index.js -e js,hbs
   {{> footer }}
 ```
 
+# 404 page in express.js
+
+```
+// 404 page in express (spacific error)
+app.get("/about/*", (req, res) => {
+  res.render("404", {
+    errorcoment: "oops this about page is not found",
+  });
+});
+
+// 404 page in express
+app.get("*", (req, res) => {
+  res.render("404", {
+    errorcoment: "Page not found",
+  });
+});
+
+```
+***********
+```
+404.hbs
+
+  {{errorcoment}}
+
+```
+<img width="832" alt="image" src="https://user-images.githubusercontent.com/78966839/177599324-353de1bc-54fc-4c67-b211-d7844aa02f39.png">
 
