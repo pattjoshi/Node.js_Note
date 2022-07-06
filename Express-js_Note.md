@@ -176,7 +176,10 @@ app.set("view engine", "hbs");
 
 // template engin route
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", {
+    Name: "Om Prakash Pattjoshi",
+    hobby: "redding and coding",
+  });
 });
 
 app.listen(3000, () => {
@@ -188,11 +191,40 @@ app.listen(3000, () => {
 nodemon src/index.js
 ```
 
-<img width="805" alt="image" src="https://user-images.githubusercontent.com/78966839/177549857-d5eb7642-786c-496b-aca5-874c2c3f0628.png">
+<img width="807" alt="image" src="https://user-images.githubusercontent.com/78966839/177556257-496fa985-9097-43a2-b085-5779a950c946.png">
+
 
 [FLODER LINK](https://github.com/pattjoshi/Node.js_Note/tree/master/EXPRESS.JS_%20DINAMIC%20FETCH%20DATA)
 
+# Customizing the Views Directory in Express JS
+```
+const path = require("path");
+app.set("views", path.join(__dirname, "../templates"));
+```
+# Partials  in Express JS
+- Partials is just like your component in react.js.
+- if i want header in all page . i, create a header Partials and ani where i want.
+- Those code are repeat that code stay on Partials folder.
 
+## require Partials
+```
+const path = require("path");
+// create expess appliction
+const express = require("express");
+const app = express();
+const hbs = require("hbs");
 
+hbs.registerPartials(path.join(__dirname, "../templates/partials"));
+
+```
+********
+```
+nodemon src/index.js -e js,hbs
+```
+## adding Partials
+
+```
+  {{> footer }}
+```
 
 
