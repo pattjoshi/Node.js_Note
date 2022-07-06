@@ -153,7 +153,46 @@ app.listen(3000, () => {
 
 <img width="816" alt="image" src="https://user-images.githubusercontent.com/78966839/177382083-e705ede4-e8aa-4ecc-be08-0d585f6882c2.png">
 
-- shpw static web-site in express.js
+- shpw static web-site in express.js Template Engines.
+
+# [Template Engines](https://expressjs.com/en/guide/using-template-engines.html#:~:text=Some%20popular%20template%20engines%20that,it%20also%20supports%20several%20others.)
+
+- In express.js we play with dinamic data we use 
+- Some popular template engines that work with Express are [pug](https://pugjs.org/api/getting-started.html),[Mustache,](https://www.npmjs.com/package/mustache) and  [EJS.](https://www.npmjs.com/package/ejs)
+
+```
+npm i hbs
+```
+- This defaults to the views directory in the application root directory.
+- create a file with .hbs extension.
+
+```
+// create expess appliction
+const express = require("express");
+const app = express();
+
+// set the view engine to hbs
+app.set("view engine", "hbs");
+
+// template engin route
+app.get("/", (req, res) => {
+  res.render("index");
+});
+
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
+```
+## server run
+```
+nodemon src/index.js
+```
+
+<img width="805" alt="image" src="https://user-images.githubusercontent.com/78966839/177549857-d5eb7642-786c-496b-aca5-874c2c3f0628.png">
+
+[FLODER LINK](https://github.com/pattjoshi/Node.js_Note/tree/master/EXPRESS.JS_%20DINAMIC%20FETCH%20DATA)
+
+
 
 
 
