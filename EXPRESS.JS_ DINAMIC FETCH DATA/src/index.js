@@ -7,7 +7,10 @@ app.set("view engine", "hbs");
 
 // template engin route
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", {
+    Name: "Om Prakash Pattjoshi",
+    hobby: "redding and coding",
+  });
 });
 
 app.listen(3000, () => {
