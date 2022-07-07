@@ -254,3 +254,24 @@ app.get("*", (req, res) => {
 ```
 <img width="832" alt="image" src="https://user-images.githubusercontent.com/78966839/177599324-353de1bc-54fc-4c67-b211-d7844aa02f39.png">
 
+# [Query Parameters in Node.js](https://www.geeksforgeeks.org/reading-query-parameters-in-node-js/)
+- in query string what use wirtten in URL that show.
+```
+app.get("/user", function(req, res){
+    var name = req.query.name
+      
+    console.log("Name :", name)
+})
+```
+
+
+
+
+
+
+
+
+
+
+
+
