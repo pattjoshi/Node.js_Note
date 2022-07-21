@@ -176,7 +176,10 @@ app.set("view engine", "hbs");
 
 // template engin route
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", {
+    Name: "Om Prakash Pattjoshi",
+    hobby: "redding and coding",
+  });
 });
 
 app.listen(3000, () => {
@@ -188,9 +191,230 @@ app.listen(3000, () => {
 nodemon src/index.js
 ```
 
-<img width="805" alt="image" src="https://user-images.githubusercontent.com/78966839/177549857-d5eb7642-786c-496b-aca5-874c2c3f0628.png">
+<img width="807" alt="image" src="https://user-images.githubusercontent.com/78966839/177556257-496fa985-9097-43a2-b085-5779a950c946.png">
+
 
 [FLODER LINK](https://github.com/pattjoshi/Node.js_Note/tree/master/EXPRESS.JS_%20DINAMIC%20FETCH%20DATA)
+
+# Customizing the Views Directory in Express JS
+```
+const path = require("path");
+app.set("views", path.join(__dirname, "../templates"));
+```
+# Partials  in Express JS
+- Partials is just like your component in react.js.
+- if i want header in all page . i, create a header Partials and ani where i want.
+- Those code are repeat that code stay on Partials folder.
+
+## require Partials
+```
+const path = require("path");
+// create expess appliction
+const express = require("express");
+const app = express();
+const hbs = require("hbs");
+
+hbs.registerPartials(path.join(__dirname, "../templates/partials"));
+
+```
+********
+```
+nodemon src/index.js -e js,hbs
+```
+## adding Partials
+
+```
+  {{> footer }}
+```
+
+# 404 page in express.js
+
+```
+// 404 page in express (spacific error)
+app.get("/about/*", (req, res) => {
+  res.render("404", {
+    errorcoment: "oops this about page is not found",
+  });
+});
+
+// 404 page in express
+app.get("*", (req, res) => {
+  res.render("404", {
+    errorcoment: "Page not found",
+  });
+});
+
+```
+***********
+```
+404.hbs
+
+  {{errorcoment}}
+
+```
+<img width="832" alt="image" src="https://user-images.githubusercontent.com/78966839/177599324-353de1bc-54fc-4c67-b211-d7844aa02f39.png">
+
+# [Query Parameters in Node.js](https://www.geeksforgeeks.org/reading-query-parameters-in-node-js/)
+- in query string what use wirtten in URL that show.
+```
+app.get("/user", function(req, res){
+    var name = req.query.name
+      
+    console.log("Name :", name)
+})
+```
+
+# [ Git SSH Setup](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
+- Secure Shell
+- Communication Protacol(Like http, https, ftp,etc)
+- Do just about anything on the remote computer
+- Traffic is encrypted
+- Used mostly in the terminal/command line
+- SSH is the client
+- SSHD is the server (Open SSH Daemon)
+- The server most have SSHD installed and runnning or you will not able toconnect using SSH.
+ 
+# Generating Keys (Windos)
+```
+`/.ssh/id_rsa (Private Key)
+`/.ssh/id_rsa.pub (Public Key)
+```
+- Public Key goes into server "authorized_keys" file
+- Gint Base & aother termonal programes include the ssh command & other Unix tools
+
+*********
+
+# SSH Cheat Sheet
+## This sheet goes along with this [SSH YouTube tutorial](https://www.youtube.com/watch?v=hQWRp-FdTpc&t=1270s)
+
+### Login via SSH with password (LOCAL SERVER)
+```$ ssh brad@192.168.1.29```
+
+### Create folder, file, install Apache (Just messing around)
+```$ mkdir test```
+
+```$ cd test```
+
+```$ touch hello.txt```
+
+```$ sudo apt-get install apache2```
+
+
+### Generate Keys (Local Machine)
+```$ ssh-keygen```
+
+### Add Key to server in one command
+```> cat ~/.ssh/id_rsa.pub | ssh brad@192.168.1.29 "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >>  ~/.ssh/authorized_keys```
+
+### Create & copy a file to the server using SCP
+```$ touch test.txt```
+```$ scp ~/test.txt brad@192.168.1.29:~```
+
+
+## DIGITAL OCEAN
+
+> Create account->create droplet
+
+### Create Keys For Droplet (id_rsa_do)
+```$ ssh-keygen -t rsa```
+
+> Add Key When Creating Droplet
+
+### Try logging in
+```$ ssh root@doserver```
+
+### If it doesn't work
+```$ ssh-add ~/.ssh/id_rsa_do```
+(or whatever name you used)
+
+### Login should now work
+```$ ssh root@doserver```
+
+### Update packages
+```$ sudo apt update```
+
+```$ sudo apt upgrade```
+
+### Create new user with sudo
+```$ adduser brad```
+
+```$ id brad```
+
+```$ usermod -aG sudo brad```
+
+```$ id brad```
+
+### Login as brad
+```> ssh brad@doserver```
+
+### We need to add the key to brads .ssh on the server, log back in as root
+```$ ssh root@doserver```
+
+```$ cd /home/brad```
+
+```$ mkdir .ssh```
+
+```$ cd .ssh```
+
+```$ touch authorized_keys```
+
+```> sudo nano authorized_keys```
+(paste in the id_rsa_do.pub key, exit and log in as brad)
+
+### Disable root password login
+```$ sudo nano /etc/ssh/sshd_config```
+
+### Set the following
+```PermitRootLogin no```
+
+```PasswordAuthentication no```
+
+### Reload sshd service
+```$ sudo systemctl reload sshd```
+
+### Change owner of /home/brad/* to brad
+```$ sudo chown -R brad:brad /home/brad```
+
+### May need to set permission
+```$ chmod 700 /home/brad/.ssh```
+
+### Install Apache and visit ip
+``` $ sudo apt install apache2 -y```
+
+## Github
+
+### Generate Github Key(On Server)
+``` $ ssh-keygen -t rsa```
+(id_rsa_github or whatever you want)
+
+## Add new key
+```$ ssh-add /home/brad/.ssh/id_rsa_github```
+
+## If you get a message about auth agent, run this and try again
+```$ eval `ssh-agent -s````
+
+## Clone repo
+```$ git clone git@github.com:bradtraversy/react_otka_auth.git```
+
+## Install Node
+```$ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -```
+
+```$ sudo apt-get install -y nodejs```
+
+## Install Dependencies
+```  $ npm install ```
+
+## Start Dev Server and visit ip:3000
+```$ npm start```
+
+## Build Out React App
+``` $ npm run build```
+
+## Move static build to web server root
+``` $ sudo mv -v /home/brad/react_otka_auth/build/* /var/www/html```
+
+
 
 
 
