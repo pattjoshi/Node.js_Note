@@ -4,7 +4,10 @@
 - Express.js is a web application framework that provides you with a simple API to build websites, web apps and back ends.
 
 # why do we actually need Express.js ?  How it is useful for us to use with Node.js ?
+- ExpressJS is a prebuilt NodeJS framework that can help you in creating server-side web applications faster and smarter.
+-  Simplicity, minimalism, flexibility, scalability are some of its characteristics and since it is made in NodeJS itself, it inherited its performance as well.
 - Try to write a small REST API server in plain Node.js (that is , using only core modules)and then in Express.js The latter will take you 5-10x less and lines of code. 
+
 
 
 # Installing
